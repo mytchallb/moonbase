@@ -14,6 +14,10 @@ const data = {
       name: "Nitrogen",
       value: 80
     },
+    {
+      name: "People",
+      value: 4
+    },
   ]
 }
 
