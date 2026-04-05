@@ -3,9 +3,14 @@ const data = {
   name: "Moon Base Alpha",
   stats: [
     {
-      temp: 24,
-      oxygen: 100
-    }
+      name: "Temp",
+      value: 22.4
+    },
+    {
+      name: "Oxygen",
+      value: 100
+    },
+    
   ]
 }
 
