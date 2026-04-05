@@ -28,18 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const baseHeading = document.createElement('h3');
   const baseList = document.createElement('ul');
 
-
   baseHeading.textContent = data.name;
-  
   base.appendChild(baseHeading);
   base.appendChild(baseList);
 
 
   data.stats.forEach((stat, index) => {
     const baseIem = document.createElement('li');
-    baseIem.textContent += `${stat.name}: ${stat.value}`;
+    baseIem.innerHTML += `<b>${stat.name}</b>: ${stat.value}`;
     baseList.appendChild(baseIem);
-
     
     console.log(stat);
   });
