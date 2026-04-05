@@ -10,7 +10,10 @@ const data = {
       name: "Oxygen",
       value: 100
     },
-    
+    {
+      name: "Nitrogen",
+      value: 80
+    },
   ]
 }
 
