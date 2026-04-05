@@ -27,4 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   base.appendChild(baseList);
   baseList.appendChild(baseIem);
 
+
+  data.stats.forEach((stat, index) => {
+    console.log(stat);
+  });
+
 });
