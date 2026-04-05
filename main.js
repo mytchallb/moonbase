@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   data.stats.forEach((stat, index) => {
     const baseIem = document.createElement('li');
-    baseIem.textContent += stat.name + ": " + stat.value;
+    baseIem.textContent += `${stat.name}: ${stat.value}`;
     baseList.appendChild(baseIem);
 
     
