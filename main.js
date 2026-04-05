@@ -14,6 +14,17 @@ const data = {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  const base = document.querySelector('#bases');
+  const baseHeading = document.createElement('h3');
+  const baseList = document.createElement('ul');
+  const baseIem = document.createElement('li');
 
+
+  baseHeading.textContent = data.name;
+  baseIem.textContent = 'A';
+  
+  base.appendChild(baseHeading);
+  base.appendChild(baseList);
+  baseList.appendChild(baseIem);
 
 });
