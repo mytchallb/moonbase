@@ -1,6 +1,6 @@
 
 const data = {
-  name: "Moon Base Alpha",
+  name: "Moon Base Alpha:",
   stats: [
     {
       name: "Temp",

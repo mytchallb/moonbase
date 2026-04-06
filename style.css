@@ -1,44 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #121212;
 }
 
-h1 {
+.header {
     text-align: center;
+    width: 100%;
+    background-color: #151515;
+    padding: 12px;
+    color: #fefefe;
 }
 
-section {
+.header h1 {
+    z-index: 2;
+}
+
+#back-ground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#back-ground::after {
+    content: '🌑';
+    position: absolute;
+    font-size: 200px;
+    line-height: 1;
+    opacity: 0.2;
+    animation: move 15s ease-in-out infinite alternate;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 15px;
+    gap: 10px;
+    margin: 0 30px;
+    overflow: hidden;
+
+}
+
+.main__section {
+    padding: 10px;
+    min-width: 300px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.main__card {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: whitesmoke;
-    max-width: 400px;
+    width: 100%;
     margin: 0 auto;
 
     border-radius: 16px;
-    transition: scale .3s ease;
+    transition: scale .3s ease, box-shadow .3s ease;
     cursor: pointer;
     overflow: hidden;
+
 }
 
-.bar {
+.main__card h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#bases {
+    padding: 20px 10px;
+}
+
+#bases ul{
+    list-style: none;
+    margin-top: 15px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.card-bar {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: .5rem;
 
+    opacity: 0.5;
     background-color: #6495ed;
-    animation: progress 2s ease infinite alternate;
 }
 
-section:hover {
+.main__section:hover .card-bar{
     scale: 1.05;
+    box-shadow: 0 5px 10px #eeea;
+    animation: progress 1s ease both;
+}
+
+.main__section:hover .main__card{
+    scale: 1.05;
+    box-shadow: 0 5px 10px #eeea;
 }
 
 @keyframes progress {
     to {
         width: 100%;
+        opacity: 1;
+        background-color: #2c76ff;
+        border-radius: .3rem;
     }
 }
+
+@keyframes move {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: 0;
+        left: 76%;
+    }
+
+    50% {
+        top: 80%;
+        left: 76%;
+    }
+
+    75% {
+        left: 0;
+        top: 80%;
+    }
+}
+
+@keyframes move {
+    0%, 100% { 
+        transform: translate(10px, 80px); 
+    }
+    25% { 
+        /* Mueve a la derecha: 100% del ancho de la pantalla menos los 200px que mide la luna */
+        transform: translate(calc(99vw - 200px), 80px); 
+    }
+    50% { 
+        /* Mueve abajo a la derecha */
+        transform: translate(calc(99vw - 200px), calc(99vh - 200px)); 
+    }
+    75% { 
+        /* Mueve abajo a la izquierda */
+        transform: translate(0, calc(99vh - 200px)); 
+    }
+
+}
+
 
