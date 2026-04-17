@@ -101,6 +101,7 @@ main {
 
     opacity: 0.5;
     background-color: #6495ed;
+    animation: progress-out 0.5s ease reverse;
 }
 
 .main__section:hover .card-bar{
@@ -115,6 +116,15 @@ main {
 }
 
 @keyframes progress {
+    to {
+        width: 100%;
+        opacity: 1;
+        background-color: #2c76ff;
+        border-radius: .3rem;
+    }
+}
+
+@keyframes progress-out {
     to {
         width: 100%;
         opacity: 1;
